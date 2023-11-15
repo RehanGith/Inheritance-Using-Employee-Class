@@ -13,6 +13,7 @@ int main() {
 		Labor l(145, "Muhammad Rehan", "Morning", 16);
 		l.getter();
 	}
-	cout << Employee::get_no_employee() << endl;
+	e1 = m;
+	display_emp();
 	return 0;
 }
