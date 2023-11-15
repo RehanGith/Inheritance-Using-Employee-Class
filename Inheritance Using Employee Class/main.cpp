@@ -75,7 +75,28 @@ public:
 	 Employee::getter();
 	 cout << "Field: " << field << " : " << "No of Projects: " << no_of_projects << endl;
  }
- 
+ class Labor : public Employee {
+ private:
+	 string shift;
+	 int hour_worked;
+ public:
+	 Labor(int id = 0, string name = "", string s = "", int hour = 0);
+	 void setter();
+	 void getter() const;
+ };
+ Labor::Labor(int id , string name, string s , int hour)
+	 : Employee(id , name), shift(s) , hour_worked(hour) { }
+ void Labor::setter() {
+	 Employee::setter;
+	 cout << "Enter Shift: ";
+	 getline(cin, shift);
+	 cout << "Enter hour worked: ";
+	 cin >> hour_worked;
+ }
+ void Labor::getter() const {
+	 Employee::getter();
+	 cout << "shift: " << shift << " : " << "Hour worked: " << hour_worked << endl;
+ }
 int main() {
-
+	
 }
