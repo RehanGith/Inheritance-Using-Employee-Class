@@ -51,6 +51,31 @@ public:
 	 Employee::getter();
 	 cout << "Position: "<<  position << " : " << " club dues: " << club_due << endl;
  }
+ class Scientist : public Employee {
+ private:
+	 string field;
+	 int no_of_projects;
+ public:
+	 Scientist(int id =0, string name = "" ,string f = "", int n = 0);
+	 void setter();
+	 void getter() const;
+ };
+ Scientist::Scientist(int id, string name, string f, int n)
+     : Employee(id, name), field(f), no_of_projects(n) {
+
+ }
+ void Scientist::setter() {
+	 Employee::setter();
+	 cout << "Enter Scientist field: ";
+	 cin >> field;
+	 cout << "Enter no of Researches: ";
+	 cin >> no_of_projects;
+ }
+ void Scientist::getter() const {
+	 Employee::getter();
+	 cout << "Field: " << field << " : " << "No of Projects: " << no_of_projects << endl;
+ }
+ 
 int main() {
 
 }
