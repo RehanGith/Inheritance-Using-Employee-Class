@@ -67,7 +67,7 @@ public:
  void Scientist::setter() {
 	 Employee::setter();
 	 cout << "Enter Scientist field: ";
-	 cin >> field;
+	 getline(cin, field);
 	 cout << "Enter no of Researches: ";
 	 cin >> no_of_projects;
  }
@@ -87,7 +87,7 @@ public:
  Labor::Labor(int id , string name, string s , int hour)
 	 : Employee(id , name), shift(s) , hour_worked(hour) { }
  void Labor::setter() {
-	 Employee::setter;
+	 Employee::setter();
 	 cout << "Enter Shift: ";
 	 getline(cin, shift);
 	 cout << "Enter hour worked: ";
@@ -98,5 +98,13 @@ public:
 	 cout << "shift: " << shift << " : " << "Hour worked: " << hour_worked << endl;
  }
 int main() {
-	
+	Employee e1(10, "Rehan");
+	e1.getter();
+	Manager m(4404, "Rehan", "HR manager", 303000.0);
+	m.getter();
+	Scientist s(5035, "Muhammad Rehan", "Software Engineering", 10);
+	s.getter();
+	Labor l(145, "Muhammad Rehan", "Morning", 16);
+	l.getter();
+	return 0;
 }
