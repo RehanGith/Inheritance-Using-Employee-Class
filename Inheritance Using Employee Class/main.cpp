@@ -6,14 +6,23 @@ class Employee {
 private:
 	int empID;
 	string empName;
+	static int no_of_employee;
 public:
+	static int get_no_employee();
 	Employee(int a = 0, string b = "");
+
 	void setter();
 	void getter() const;
 	~Employee();
 };
+int Employee::no_of_employee = 0;
+int Employee::get_no_employee() {
+	return no_of_employee;
+}
  Employee::Employee(int a, string b) 
-	 : empID(a) , empName(b) {  }
+	 : empID(a) , empName(b) {
+	 ++no_of_employee;
+ }
  void Employee::setter() {
 	 cout << "Enter Employee ID: ";
 	 cin >> empID;
@@ -24,7 +33,7 @@ public:
 	 cout <<"Name: " << empName << " : " << " ID: " << empID << endl;
  }
  Employee::~Employee() {
-
+	 --no_of_employee;
 }
 
  class Manager : public Employee {
@@ -104,7 +113,10 @@ int main() {
 	m.getter();
 	Scientist s(5035, "Muhammad Rehan", "Software Engineering", 10);
 	s.getter();
-	Labor l(145, "Muhammad Rehan", "Morning", 16);
-	l.getter();
+	{
+		Labor l(145, "Muhammad Rehan", "Morning", 16);
+		l.getter();
+	}
+	cout << Employee::get_no_employee() << endl;
 	return 0;
 }
