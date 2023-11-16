@@ -18,6 +18,7 @@ Employee::Employee(const Employee& source)  {
 void Employee::setter() {
 	cout << "Enter Employee ID: ";
 	cin >> empID;
+	cin.ignore();
 	cout << "Enter Employee Name: ";
 	getline(cin, empName);
 }

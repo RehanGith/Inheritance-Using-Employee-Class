@@ -37,7 +37,7 @@ public:
 class Labor : public Employee {
 private:
 	std::string shift;
-	int hour_worked;
+	size_t hour_worked;
 public:
 	Labor(int id = 0, std::string name = "", std::string s = "", int hour = 0);
 	Labor(const Labor& source);
